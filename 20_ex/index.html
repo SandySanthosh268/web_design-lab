@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Automation</title>
+</head>
+<body>
+    <h1>IoT Home Automation</h1>
+    <button onclick="toggle('on')">Turn ON</button>
+    <button onclick="toggle('off')">Turn OFF</button>
+
+    <script>
+        function toggle(state) {
+            fetch('/toggle', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `state=${state}`
+            });
+        }
+    </script>
+</body>
+</html>
